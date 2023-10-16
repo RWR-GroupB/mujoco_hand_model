@@ -1,16 +1,16 @@
 <mujoco model="robot_hand">
     <asset>
         <mesh name="hand_palm_mesh"
-            file="model/hand-palm_prototype-finger_v1.0_2023-10-16_group_B.stl"
+            file="mesh/hand-palm_prototype-finger_v1.0_2023-10-16_group_B.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="finger_prox_mesh"
-            file="model/finger-prox_prototype-finger_v1.0_2023-10-16_group_B.stl"
+            file="mesh/finger-prox_prototype-finger_v1.0_2023-10-16_group_B.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="finger_mid_mesh"
-            file="model/finger-mid_prototype-finger_v1.0_2023-10-16_group_B.stl"
+            file="mesh/finger-mid_prototype-finger_v1.0_2023-10-16_group_B.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="finger_top_mesh"
-            file="model/finger-top_prototype-finger_v1.0_2023-10-16_group_B.stl"
+            file="mesh/finger-top_prototype-finger_v1.0_2023-10-16_group_B.stl"
             scale="0.001 0.001 0.001"></mesh>
     </asset>
 
