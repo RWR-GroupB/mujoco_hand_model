@@ -1,4 +1,5 @@
 <mujoco model="robot_hand">
+    <compiler angle="radian" />
     <asset>
         <mesh name="hand_palm_mesh"
             file="mesh/hand-palm_prototype-finger_v1.0_2023-10-16_group_B.stl"
@@ -14,22 +15,40 @@
             scale="0.001 0.001 0.001"></mesh>
     </asset>
 
+    <default>
+        <joint type="hinge" limited="true" damping="0.05" armature="0.001" margin="0.01"
+            frictionloss="0.001" />
+    </default>
+
     <worldbody>
         <body name="hand_palm">
             <geom type="mesh" mesh="hand_palm_mesh"></geom>
+
+            <body name="finger_prox_virt">
+                <joint name="finger_prox_virt_joint" axis="0 0 -1" pos="0.01 -0.01 0" range="0 1"></joint>
+                <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
+
+                <body name="finger_prox">
+                    <joint name="finger_prox_joint" axis="0 0 -1" pos="0.01 0.01 0"
+                        range="0 1"></joint>
+                    <geom type="mesh" mesh="finger_prox_mesh"></geom>
+
+
+                    <body name="finger_mid">
+                        <geom type="mesh" mesh="finger_mid_mesh"></geom>
+
+                        <body name="finger_top">
+                            <geom type="mesh" mesh="finger_top_mesh"></geom>
+                        </body>
+                    </body>
+
+
+                </body>
+
+
+            </body>
         </body>
 
-        <body name="finger_prox">
-            <geom type="mesh" mesh="finger_prox_mesh"></geom>
-        </body>
-
-        <body name="finger_mid">
-            <geom type="mesh" mesh="finger_mid_mesh"></geom>
-        </body>
-
-        <body name="finger_top">
-            <geom type="mesh" mesh="finger_top_mesh"></geom>
-        </body>
     </worldbody>
 
 </mujoco>
