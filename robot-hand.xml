@@ -18,6 +18,8 @@
     <default>
         <joint type="hinge" limited="true" damping="0.05" armature="0.001" margin="0.01"
             frictionloss="0.001" />
+        <position ctrllimited="true" forcelimited="true" forcerange="-1 1" kp="2."/>
+        <tendon limited="true" range="-0.001 0.001"/>
     </default>
 
     <worldbody>
@@ -62,5 +64,31 @@
         </body>
 
     </worldbody>
+
+    <actuator>
+        <position name="finger_prox_joint" joint="finger_prox_joint" ctrlrange="0 0.83"/>
+        <position name="finger_mid_joint" joint="finger_mid_joint" ctrlrange="0 0.96" kp="4"/>
+    </actuator>
+
+    <tendon>
+        <!-- Index finger -->
+        <fixed name="root2index_pp">
+            <joint joint="finger_prox_virt_joint" coef="1"/>
+            <joint joint="finger_prox_joint" coef="-1"/>
+        </fixed>
+        <fixed name="index_pp2mp">
+            <joint joint="finger_mid_virt_joint" coef="1"/>
+            <joint joint="finger_mid_joint" coef="-1"/>
+        </fixed>
+        <fixed name="index_jointlink">
+            <joint joint="finger_mid_joint" coef="0.71"/>
+            <joint joint="finger_top_virt_joint" coef="-1"/>
+        </fixed>
+        <fixed name="index_mp2dp">
+            <joint joint="finger_top_virt_joint" coef="1"/>
+            <joint joint="finger_top_joint" coef="-1"/>
+        </fixed>
+
+    </tendon>
 
 </mujoco>
