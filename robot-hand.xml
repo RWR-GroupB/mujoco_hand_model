@@ -54,15 +54,15 @@
             scale="0.001 0.001 0.001"></mesh>
 
         <mesh name="thumb_prox_mesh"
-            file="mesh\thumb_finger_prox_r.stl"
+            file="mesh\thumb_finger_prox.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <mesh name="thumb_mid_mesh"
-            file="mesh\thumb_finger_mid_m.stl"
+            file="mesh\thumb_finger_mid.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <mesh name="thumb_top_mesh"
-            file="mesh\thumb_finger_top_m.stl"
+            file="mesh\thumb_finger_top.stl"
             scale="0.001 0.001 0.001"></mesh>
 
     </asset>
@@ -185,19 +185,19 @@
 
                     <body name="thumb_upper_finger_base">
                         <!-- <joint name="thumb_upper_finger_base_joint" axis="0 0 -1" pos="0.008 0.002 0" range="0 0.83"></joint> -->
-                        <!-- <geom type="mesh" mesh="thumb_upper_finger_base_mesh"></geom> -->
+                        <geom type="mesh" mesh="thumb_upper_finger_base_mesh"></geom>
 
                         <body name="thumb_prox">
                             <!-- <joint name="thumb_prox_joint" axis="0 0 -1" pos="0.008 0.002 0" range="0 0.83"></joint> -->
-                            <!-- <geom type="mesh" mesh="thumb_prox_mesh"></geom> -->
+                            <geom type="mesh" mesh="thumb_prox_mesh"></geom>
 
                             <body name="thumb_mid">
                                 <!-- <joint name="thumb_mid_joint" axis="0 0 -1" pos="0.008 0.002 0" range="0 0.83"></joint> -->
-                                <!-- <geom type="mesh" mesh="thumb_mid_mesh"></geom> -->
+                                <geom type="mesh" mesh="thumb_mid_mesh"></geom>
 
                                 <body name="thumb_top">
                                     <!-- <joint name="thumb_top_joint" axis="0 0 -1" pos="0.008 0.002 0" range="0 0.83"></joint> -->
-                                    <!-- <geom type="mesh" mesh="thumb_top_mesh"></geom> -->
+                                    <geom type="mesh" mesh="thumb_top_mesh"></geom>
                                 </body>
                             </body>
                         </body>
