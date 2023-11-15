@@ -1,0 +1,95 @@
+<mujoco model="robot_hand">
+    <compiler angle="radian" />
+    <asset>
+        <mesh name="hand_palm_mesh"
+            file="mesh/hand-palm_prototype-finger_v1.0_2023-10-16_group_B.stl"
+            scale="0.001 0.001 0.001"></mesh>
+        <mesh name="finger_prox_mesh"
+            file="mesh/finger-prox_prototype-finger_v1.0_2023-10-16_group_B.stl"
+            scale="0.001 0.001 0.001"></mesh>
+        <mesh name="finger_mid_mesh"
+            file="mesh/finger-mid_prototype-finger_v1.0_2023-10-16_group_B.stl"
+            scale="0.001 0.001 0.001"></mesh>
+        <mesh name="finger_top_mesh"
+            file="mesh/finger-top_prototype-finger_v1.0_2023-10-16_group_B.stl"
+            scale="0.001 0.001 0.001"></mesh>
+    </asset>
+
+    <default>
+        <joint type="hinge" limited="true" damping="0.05" armature="0.001" margin="0.01"
+            frictionloss="0.001" />
+        <position ctrllimited="true" forcelimited="true" forcerange="-1 1" kp="2."/>
+        <tendon limited="true" range="-0.001 0.001"/>
+    </default>
+
+    <worldbody>
+        <body name="hand_palm">
+            <geom type="mesh" mesh="hand_palm_mesh"></geom>
+
+            <body name="finger_prox_virt">
+                <joint name="finger_prox_virt_joint" axis="0 0 -1" pos="0.01 -0.01 0" range="0 0.83"></joint>
+                <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
+
+                <body name="finger_prox">
+                    <joint name="finger_prox_joint" axis="0 0 -1" pos="0.01 0.01 0"
+                        range="0 0.83"></joint>
+                    <geom type="mesh" mesh="finger_prox_mesh"></geom>
+
+                    <body name="finger_mid_virt">
+                        <joint name="finger_mid_virt_joint" axis="0 0 -1" pos="0.008 0.033 0"
+                            range="0 0.96"></joint>
+                        <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
+
+                        <body name="finger_mid">
+                            <joint name="finger_mid_joint" axis="0 0 -1" pos="0.008 0.049 0"
+                                range="0 0.96"></joint>
+                            <geom type="mesh" mesh="finger_mid_mesh"></geom>
+
+                            <body name="finger_top_virt">
+                                <joint name="finger_top_virt_joint" axis="0 0 -1"
+                                    pos="0.007 0.066 0"
+                                    range="0 0.68"></joint>
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
+
+                                <body name="finger_top">
+                                    <joint name="finger_top_joint" axis="0 0 -1" pos="0.007 0.080 0"
+                                        range="0 0.68"></joint>
+                                    <geom type="mesh" mesh="finger_top_mesh"></geom>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+
+        </body>
+
+    </worldbody>
+
+    <actuator>
+        <position name="finger_prox_joint" joint="finger_prox_joint" ctrlrange="0 0.83"/>
+        <position name="finger_mid_joint" joint="finger_mid_joint" ctrlrange="0 0.96" kp="4"/>
+    </actuator>
+
+    <tendon>
+        <!-- Index finger -->
+        <fixed name="root2index_pp">
+            <joint joint="finger_prox_virt_joint" coef="1"/>
+            <joint joint="finger_prox_joint" coef="-1"/>
+        </fixed>
+        <fixed name="index_pp2mp">
+            <joint joint="finger_mid_virt_joint" coef="1"/>
+            <joint joint="finger_mid_joint" coef="-1"/>
+        </fixed>
+        <fixed name="index_jointlink">
+            <joint joint="finger_mid_joint" coef="0.71"/>
+            <joint joint="finger_top_virt_joint" coef="-1"/>
+        </fixed>
+        <fixed name="index_mp2dp">
+            <joint joint="finger_top_virt_joint" coef="1"/>
+            <joint joint="finger_top_joint" coef="-1"/>
+        </fixed>
+
+    </tendon>
+
+</mujoco>
