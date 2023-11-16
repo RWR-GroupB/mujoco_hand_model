@@ -175,31 +175,18 @@
                 </body>
             </body>
 
-            <!-- Thumb -->
             <body name="thumb_palm_attachment">
                 <geom type="mesh" mesh="thumb_palm_attachement_mesh"></geom>
 
                 <body name="thumb_flexion_extension">
-                    <joint name="thumb_flexion_extension_joint" type="hinge" axis="0.0 -0.84 0.54" pos="0.0262 -0.060889 -0.048065" range="-0.707 0.707"></joint> 
+                    <joint name="thumb_flexion_extension_joint" type="hinge" axis="0.0 0.84 -0.54" pos="0.0262 -0.060889 -0.048065" range="0 0.83"></joint> 
                     <inertial pos="0 0 0" mass="0.002426" diaginertia="4E-10 4E-10 3E-10" />
-                    <!-- <inertial pos="0 0 0" mass="0.002426" diaginertia="4E-10 4E-10 3E-10" /> -->
-                    <!-- <joint name="thumb_flexion_extension_joint" type="hinge" axis="0.0 -8.4 5.4" pos="0.00262 -0.0060889 -0.0048065" range="-0.83 0.83"></joint>  -->
-                    
                     <geom type="mesh" mesh="thumb_flexion_extension_mesh"></geom>
-                </body>
-            </body> 
 
-            <!-- <body name="thumb_palm_attachment"> -->
-                <!-- <geom type="mesh" mesh="thumb_palm_attachement_mesh"></geom> -->
-
-                <!-- <body name="thumb_flexion_extension"> -->
-                    <!-- <joint name="thumb_flexion_extension_joint" type="hinge" axis="0.0 0.84 -0.54" pos="0.0262 -0.060889 -0.048065" range="0 0.83"></joint>  -->
-                    <!-- <joint name="thumb_flexion_extension_joint" type="hinge" axis="0.0 -0.84 0.54" pos="0.00262 -0.0060889 -0.0048065" range="-0.83 0.83"></joint>  -->
-                    <!-- <geom type="mesh" mesh="thumb_flexion_extension_mesh"></geom> -->
-
-                    <!-- <body name="thumb_upper_finger_base"> -->
-                        <!-- <joint name="thumb_upper_finger_base_joint" axis="0 0 -1" pos="0.008 0.002 0" range="0 0.83"></joint> -->
-                        <!-- <geom type="mesh" mesh="thumb_upper_finger_base_mesh"></geom> -->
+                    <body name="thumb_upper_finger_base">
+                        <joint name="thumb_adduction_abduction_joint" type="hinge" axis="0.0 -0.535 -0.845" pos="0.02620 -0.067708 -0.026184" range="-0.55 0.55"></joint>
+                        <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
+                        <geom type="mesh" mesh="thumb_upper_finger_base_mesh"></geom>
 
                         <!-- <body name="thumb_prox"> -->
                             <!-- <joint name="thumb_prox_joint" axis="0 0 -1" pos="0.008 0.002 0" range="0 0.83"></joint> -->
@@ -210,14 +197,14 @@
                                 <!-- <geom type="mesh" mesh="thumb_mid_mesh"></geom> -->
 
                                 <!-- <body name="thumb_top"> -->
-                                    <!-- <joint name="thumb_top_joint" axis="0 0 -1" pos="0.008 0.002 0" range="0 0.83"></joint>
-                                    <geom type="mesh" mesh="thumb_top_mesh"></geom> -->
+                                    <!-- <joint name="thumb_top_joint" axis="0 0 -1" pos="0.008 0.002 0" range="0 0.83"></joint> -->
+                                    <!-- <geom type="mesh" mesh="thumb_top_mesh"></geom> -->
                                 <!-- </body> -->
                             <!-- </body> -->
                         <!-- </body> -->
-                    <!-- </body>  -->
-                <!-- </body> -->
-            <!-- </body>  -->
+                    </body>
+                </body>
+            </body> 
         </body>
 
     </worldbody>
@@ -230,6 +217,7 @@
         <position name="pinky_finger_prox_joint" joint="pinky_finger_prox_joint" ctrlrange="0 0.84"/>
         <position name="pinky_finger_mid_joint" joint="pinky_finger_mid_joint" ctrlrange="0 0.96" kp="4"/>
         <position name="thumb_flexion_extension_joint" joint="thumb_flexion_extension_joint" ctrlrange="-0.707 1.57" kp="4"/>
+        <position name="thumb_adduction_abduction_joint" joint="thumb_adduction_abduction_joint" ctrlrange="-0.52 0.52" kp="4"/>
     </actuator>
 
 
