@@ -3,66 +3,66 @@
     <asset>
         <!-- Hand Palm -->
         <mesh name="hand_palm_mesh"
-            file="mesh\palm-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/palm-prototype_hand-v1.2-2023-11-13.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <!-- Index Finger Components -->
         <mesh name="index_finger_prox_mesh"
-            file="mesh\finger_index_prox-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_index_prox-prototype_hand-v1.2-2023-11-13.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="index_finger_mid_mesh"
-            file="mesh\finger_index_mid-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_index_mid-prototype_hand-v1.2-2023-11-13.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="index_finger_top_mesh"
-            file="mesh\finger_index_top-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_index_top-prototype_hand-v1.2-2023-11-13.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <!-- Middle Finger Components -->
         <mesh name="middle_finger_prox_mesh"
-            file="mesh\finger_middle_prox-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_middle_prox-prototype_hand-v1.2-2023-11-13.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="middle_finger_mid_mesh"
-            file="mesh\finger_middle_mid-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_middle_mid-prototype_hand-v1.2-2023-11-13.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="middle_finger_top_mesh"
-            file="mesh\finger_middle_top-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_middle_top-prototype_hand-v1.2-2023-11-13.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <!-- Pinky Finger Components -->
         <mesh name="pinky_finger_prox_mesh"
-            file="mesh\finger_pinky_prox-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_pinky_prox-prototype_hand-v1.2-2023-11-13.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="pinky_finger_mid_mesh"
-            file="mesh\finger_pinky_mid-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_pinky_mid-prototype_hand-v1.2-2023-11-13.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="pinky_finger_top_mesh"
-            file="mesh\finger_pinky_top-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_pinky_top-prototype_hand-v1.2-2023-11-13.stl"
             scale="0.001 0.001 0.001"></mesh>
 
 
         <!-- Thumb Components -->
         <mesh name="thumb_palm_attachement_mesh"
-            file="mesh\thumb_palm_attachment.stl"
+            file="mesh/thumb_palm_attachment.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <mesh name="thumb_flexion_extension_mesh"
-            file="mesh\thumb_flexion_extension.stl"
+            file="mesh/thumb_flexion_extension.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <mesh name="thumb_upper_finger_base_mesh"
-            file="mesh\thumb_upper_finger_base.stl"
+            file="mesh/thumb_upper_finger_base.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <mesh name="thumb_prox_mesh"
-            file="mesh\thumb_finger_prox.stl"
+            file="mesh/thumb_finger_prox.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <mesh name="thumb_mid_mesh"
-            file="mesh\thumb_finger_mid.stl"
+            file="mesh/thumb_finger_mid.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <mesh name="thumb_top_mesh"
-            file="mesh\thumb_finger_top.stl"
+            file="mesh/thumb_finger_top.stl"
             scale="0.001 0.001 0.001"></mesh>
 
     </asset>
@@ -140,7 +140,6 @@
                         </body>
                     </body>
                 </body>
-
             </body>
 
             <!-- Pinky Finger -->
