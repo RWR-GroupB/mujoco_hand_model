@@ -80,29 +80,29 @@
 
             <!-- Index Finger -->
             <body name="index_finger_prox_virt">
-                <joint name="index_finger_prox_virt_joint" axis="0 0 -1" pos="0.008 -0.018 0" range="0 0.83"></joint>
+                <joint name="index_finger_prox_virt_joint" axis="0 0 -1" pos="0.00800 -0.01800 0.05450" range="0 0.83"></joint>
                 <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
 
                 <body name="index_finger_prox">
-                    <joint name="index_finger_prox_joint" axis="0 0 -1" pos="0.008 -0.002 0" range="0 0.83"></joint>
-                    <geom type="mesh" mesh="index_finger_prox_mesh"></geom>
+                    <joint name="index_finger_prox_joint" axis="0 0 -1" pos="0.00800 -0.00200 0.05450" range="0 0.83"></joint>
+                    <geom type="mesh" mesh="index_finger_prox_mesh" margin="0"></geom>
 
                     <body name="index_finger_mid_virt">
-                        <joint name="index_finger_mid_virt_joint" axis="0 0 -1" pos="0.006 0.021 0" range="0 0.96"></joint>
+                        <joint name="index_finger_mid_virt_joint" axis="0 0 -1" pos="0.006 0.021 0.05450" range="0 0.96"></joint>
                         <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
 
                         <body name="index_finger_mid">
-                            <joint name="index_finger_mid_joint" axis="0 0 -1" pos="0.006 0.033 0" range="0 0.96"></joint>
-                            <geom type="mesh" mesh="index_finger_mid_mesh"></geom>
+                            <joint name="index_finger_mid_joint" axis="0 0 -1" pos="0.006 0.033 0.05450" range="0 0.96"></joint>
+                            <geom type="mesh" mesh="index_finger_mid_mesh" margin="0"></geom>
 
                             <body name="index_finger_top_virt">
                                 <joint name="index_finger_top_virt_joint" axis="0 0 -1"
-                                    pos="0.005 0.050 0" range="0 0.68"></joint>
+                                    pos="0.005 0.050 0.05450" range="0 0.68"></joint>
                                 <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
 
                                 <body name="index_finger_top">
-                                    <joint name="index_finger_top_joint" axis="0 0 -1" pos="0.005 0.060 0" range="0 0.68"></joint>
-                                    <geom type="mesh" mesh="index_finger_top_mesh"></geom>
+                                    <joint name="index_finger_top_joint" axis="0 0 -1" pos="0.005 0.060 0.05450" range="0 0.68"></joint>
+                                    <geom type="mesh" mesh="index_finger_top_mesh" margin="0"></geom>
                                 </body>
                             </body>
                         </body>
