@@ -237,6 +237,24 @@
         <position name="pinky_finger_mid_joint" joint="pinky_finger_mid_joint" ctrlrange="0 0.96" kp="4"/>
     </actuator>
 
+    <sensor>
+        <jointpos name="root2thumb_base" joint="thumb_flexion_extension_joint"/>
+        <jointpos name="thumb_base2pp" joint="thumb_adduction_abduction_joint"/>
+        <jointpos name="thumb_pp2mp" joint="thumb_finger_prox_joint"/>
+        <jointpos name="thumb_mp2dp" joint="thumb_finger_mid_joint"/>
+
+        <jointpos name="root2index_pp" joint="index_finger_prox_joint"/>
+        <jointpos name="index_pp2mp" joint="index_finger_mid_joint"/>
+        <jointpos name="index_mp2dp" joint="index_finger_top_joint" />
+
+        <jointpos name="root2middle_pp" joint="middle_finger_prox_joint"/>
+        <jointpos name="middle_pp2mp" joint="middle_finger_mid_joint"/>
+        <jointpos name="middle_mp2dp" joint="middle_finger_top_joint" />
+
+        <jointpos name="root2pinky_pp" joint="pinky_finger_prox_joint"/>
+        <jointpos name="pinky_pp2mp" joint="pinky_finger_mid_joint"/>
+        <jointpos name="pinky_mp2dp" joint="pinky_finger_top_joint" />
+    </sensor>
 
     <tendon>
 
