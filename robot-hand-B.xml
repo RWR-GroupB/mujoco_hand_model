@@ -1,5 +1,6 @@
-<mujoco model="robot_hand">
+<mujoco model="robot_hand_B">
     <compiler angle="radian" />
+    <option collision="dynamic"/>
     <asset>
         <!-- Hand Palm -->
         <mesh name="hand_palm_mesh"
@@ -39,10 +40,9 @@
             file="mesh/finger_pinky_top-prototype_hand-v1.2-2023-11-13.stl"
             scale="0.001 0.001 0.001"></mesh>
 
-
         <!-- Thumb Components -->
         <mesh name="thumb_palm_attachement_mesh"
-            file="mesh/thumb_palm_attachment.stl"
+            file="mesh/thumb_palm_attachement.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <mesh name="thumb_flexion_extension_mesh"
@@ -65,42 +65,50 @@
             file="mesh/thumb_finger_top.stl"
             scale="0.001 0.001 0.001"></mesh>
 
-    </asset>
+    </asset>index_top
 
     <default>
-        <joint type="hinge" limited="true" damping="0.05" armature="0.001" margin="0.01"
-            frictionloss="0.001" />
+        <!-- use same geom params as the Shadow Hand model in IsaacGymEnv for now -->
+        <!-- the density is adjusted so that the total weight of the hand part (not including the base) is the same as the real hand (106g) (therefore the base will have a wrong mass, which shouldn't matter for now) -->
+        <geom rgba="1 1 1 1" type="mesh" density="662" friction="1 0.005 0.001" condim="3" margin="0.0005" contype="1" conaffinity="1"/>
+        <!-- use same joint params as IsaacGymEnv for now -->
+        <!-- TODO: joint damping and position control kp should eventually be set to sysID'ed values -->
+        <joint type="hinge" limited="true" damping="0.05" armature="0.001" margin="0.01" frictionloss="0.001" />
+        <!-- actuator configuration -->
         <position ctrllimited="true" forcelimited="true" forcerange="-1 1" kp="2."/>
+        <!-- the tendon which limits the two joints creating the rolling joint should be very limited in its length range -->
         <tendon limited="true" range="-0.001 0.001"/>
     </default>
 
+
     <worldbody>
+
         <body name="hand_palm">
             <geom type="mesh" mesh="hand_palm_mesh" contype = "1" conaffinity = "0"></geom>
 
             <!-- Index Finger --> 
             <body name="index_finger_prox_virt">
-                <joint name="index_finger_prox_virt_joint" axis="0 0 -1" pos="0.00800 -0.01800 0.05450" range="0 0.83"></joint> 
+                <joint name="index_finger_prox_virt_joint" axis="0 0 -1" pos="0.00800 -0.01800 0.03550" range="0 0.83"></joint> 
                 <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
 
                 <body name="index_finger_prox">
-                    <joint name="index_finger_prox_joint" axis="0 0 -1" pos="0.00800 -0.00200 0.05450" range="0 0.83"></joint>
+                    <joint name="index_finger_prox_joint" axis="0 0 -1" pos="0.00800 -0.00200 0.03550" range="0 0.83"></joint>
                     <geom type="mesh" mesh="index_finger_prox_mesh" contype = "1" conaffinity = "0"></geom>
 
                     <body name="index_finger_mid_virt">
-                        <joint name="index_finger_mid_virt_joint" axis="0 0 -1" pos="0.006 0.02100 0.05450" range="0 0.96"></joint>
+                        <joint name="index_finger_mid_virt_joint" axis="0 0 -1" pos="0.006 0.02100 0.03550" range="0 0.96"></joint>
                         <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10"/>
 
                         <body name="index_finger_mid">
-                            <joint name="index_finger_mid_joint" axis="0 0 -1" pos="0.006 0.03300 0.05450" range="0 0.96"></joint>
+                            <joint name="index_finger_mid_joint" axis="0 0 -1" pos="0.006 0.03300 0.03550" range="0 0.96"></joint>
                             <geom type="mesh" mesh="index_finger_mid_mesh"></geom>
 
                             <body name="index_finger_top_virt">
-                                <joint name="index_finger_top_virt_joint" axis="0 0 -1" pos="0.005 0.05000 0.05450" range="0 0.68"></joint>
+                                <joint name="index_finger_top_virt_joint" axis="0 0 -1" pos="0.005 0.05000 0.03550" range="0 0.68"></joint>
                                 <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
 
                                 <body name="index_finger_top">
-                                    <joint name="index_finger_top_joint" axis="0 0 -1" pos="0.005 0.06000 0.05450" range="0 0.68"></joint>
+                                    <joint name="index_finger_top_joint" axis="0 0 -1" pos="0.005 0.06000 0.03550" range="0 0.68"></joint>
                                     <geom type="mesh" mesh="index_finger_top_mesh"></geom>
                                 </body>
                             </body>
@@ -144,19 +152,19 @@
 
             <!-- Pinky Finger -->
             <body name="pinky_finger_prox_virt">
-                <joint name="pinky_finger_prox_virt_joint" axis="0 0 -1" pos="0.008 -0.018 0" range="0 0.83"></joint>
+                <joint name="pinky_finger_prox_virt_joint" axis="0 0 -1" pos="0.008 -0.018 -0.03550" range="0 0.83"></joint>
                 <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
 
                 <body name="pinky_finger_prox">
-                    <joint name="pinky_finger_prox_joint" axis="0 0 -1" pos="0.008 -0.002 0" range="0 0.83"></joint>
+                    <joint name="pinky_finger_prox_joint" axis="0 0 -1" pos="0.008 -0.002 -0.03550" range="0 0.83"></joint>
                     <geom type="mesh" mesh="pinky_finger_prox_mesh" contype = "1" conaffinity = "0"></geom>
 
                     <body name="pinky_finger_mid_virt">
-                        <joint name="pinky_finger_mid_virt_joint" axis="0 0 -1" pos="0.006 0.021 0" range="0 0.96"></joint>
+                        <joint name="pinky_finger_mid_virt_joint" axis="0 0 -1" pos="0.006 0.021 -0.03550" range="0 0.96"></joint>
                         <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
 
                         <body name="pinky_finger_mid">
-                            <joint name="pinky_finger_mid_joint" axis="0 0 -1" pos="0.006 0.033 0" range="0 0.96"></joint>
+                            <joint name="pinky_finger_mid_joint" axis="0 0 -1" pos="0.006 0.033 -0.03550" range="0 0.96"></joint>
                             <geom type="mesh" mesh="pinky_finger_mid_mesh"></geom>
 
                             <body name="pinky_finger_top_virt">
@@ -165,7 +173,7 @@
                                 <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
 
                                 <body name="pinky_finger_top">
-                                    <joint name="pinky_finger_top_joint" axis="0 0 -1" pos="0.005 0.060 0" range="0 0.68"></joint>
+                                    <joint name="pinky_finger_top_joint" axis="0 0 -1" pos="0.005 0.060 -0.03550" range="0 0.68"></joint>
                                     <geom type="mesh" mesh="pinky_finger_top_mesh"></geom>
                                 </body>
                             </body>
@@ -175,12 +183,12 @@
             </body>
 
             <!-- Thumb -->
-            <body name="thumb_palm_attachment">
-                <geom type="mesh" mesh="thumb_palm_attachement_mesh" contype ="0" conaffinity = "0"></geom>
+            <body name="thumb_palm_attachement">
+                <geom type="mesh" mesh="thumb_palm_attachement_mesh" contype ="1" conaffinity = "0"></geom>
 
                 <body name="thumb_flexion_extension">
                     <joint name="thumb_flexion_extension_joint" type="hinge" axis="0.0 -0.84 0.54" pos="0.0262 -0.060889 -0.048065" range="-0.87 0.87"></joint> 
-                    <geom type="mesh" mesh="thumb_flexion_extension_mesh" contype ="0" conaffinity = "0"></geom>
+                    <geom type="mesh" mesh="thumb_flexion_extension_mesh" contype ="1" conaffinity = "0"></geom>
 
                     <body name="thumb_upper_finger_base">
                         <joint name="thumb_adduction_abduction_joint" type="hinge" axis="0.0 -0.535 -0.845" pos="0.02620 -0.067708 -0.026184" range="-0.7 0.7"></joint>
@@ -223,6 +231,28 @@
     
     </worldbody>
 
+    <contact>
+        <!-- neighboring bodies are excluded from contact calculation -->
+        <exclude body1="hand_palm" body2="thumb_palm_attachement"/>
+        <exclude body1="thumb_palm_attachement" body2="thumb_flexion_extension"/>
+        <exclude body1="thumb_flexion_extension" body2="thumb_upper_finger_base"/>
+        <exclude body1="hand_palm" body2="thumb_prox"/>  <!-- there seems to be somehow unintended collision here -->
+        <exclude body1="thumb_prox" body2="thumb_mid"/>
+        <exclude body1="thumb_mid" body2="thumb_top"/>
+
+        <exclude body1="hand_palm" body2="index_finger_prox"/>
+        <exclude body1="index_finger_prox" body2="index_finger_mid"/>
+        <exclude body1="index_finger_top" body2="index_finger_top"/>
+        
+        <exclude body1="hand_palm" body2="middle_finger_prox"/>
+        <exclude body1="middle_finger_prox" body2="middle_finger_mid"/>
+        <exclude body1="middle_finger_mid" body2="middle_finger_top"/>
+
+        <exclude body1="hand_palm" body2="pinky_finger_prox"/>
+        <exclude body1="pinky_finger_prox" body2="pinky_finger_mid"/>
+        <exclude body1="pinky_finger_mid" body2="pinky_finger_top"/>
+    </contact>
+
 
     <actuator>
         <position name="thumb_flexion_extension_joint" joint="thumb_flexion_extension_joint" ctrlrange="-0.87 0.87" kp="1"/>
@@ -238,22 +268,22 @@
     </actuator>
 
     <sensor>
-        <jointpos name="root2thumb_base" joint="thumb_flexion_extension_joint"/>
-        <jointpos name="thumb_base2pp" joint="thumb_adduction_abduction_joint"/>
-        <jointpos name="thumb_pp2mp" joint="thumb_finger_prox_joint"/>
-        <jointpos name="thumb_mp2dp" joint="thumb_finger_mid_joint"/>
+        <jointpos name="thumb_flexion_extension_sens" joint="thumb_flexion_extension_joint"/>
+        <jointpos name="thumb_adduction_abduction_sens" joint="thumb_adduction_abduction_joint"/>
+        <jointpos name="thumb_finger_prox_sens" joint="thumb_finger_prox_joint"/>
+        <jointpos name="thumb_finger_mid_sens" joint="thumb_finger_mid_joint"/>
 
-        <jointpos name="root2index_pp" joint="index_finger_prox_joint"/>
-        <jointpos name="index_pp2mp" joint="index_finger_mid_joint"/>
-        <jointpos name="index_mp2dp" joint="index_finger_top_joint" />
+        <jointpos name="index_finger_prox_sens" joint="index_finger_prox_joint"/>
+        <jointpos name="index_finger_mid_sens" joint="index_finger_mid_joint"/>
+        <jointpos name="index_finger_top_sens" joint="index_finger_top_joint" />
 
-        <jointpos name="root2middle_pp" joint="middle_finger_prox_joint"/>
-        <jointpos name="middle_pp2mp" joint="middle_finger_mid_joint"/>
-        <jointpos name="middle_mp2dp" joint="middle_finger_top_joint" />
+        <jointpos name="middle_finger_prox_sens" joint="middle_finger_prox_joint"/>
+        <jointpos name="middle_finger_mid_sens" joint="middle_finger_mid_joint"/>
+        <jointpos name="middle_finger_top_sens" joint="middle_finger_top_joint" />
 
-        <jointpos name="root2pinky_pp" joint="pinky_finger_prox_joint"/>
-        <jointpos name="pinky_pp2mp" joint="pinky_finger_mid_joint"/>
-        <jointpos name="pinky_mp2dp" joint="pinky_finger_top_joint" />
+        <jointpos name="pinky_finger_prox_sens" joint="pinky_finger_prox_joint"/>
+        <jointpos name="pinky_finger_mid_sens" joint="pinky_finger_mid_joint"/>
+        <jointpos name="pinky_finger_top_sens" joint="pinky_finger_top_joint" />
     </sensor>
 
     <tendon>
