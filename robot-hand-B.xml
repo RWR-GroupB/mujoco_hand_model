@@ -9,36 +9,45 @@
             scale="0.001 0.001 0.001"></mesh>
 
         <!-- Index Finger Components -->
+        <mesh name="index_finger_knuckle_mesh"
+            file="mesh/finger_index_knuckle.stl"
+            scale="0.001 0.001 0.001"></mesh>
         <mesh name="index_finger_prox_mesh"
-            file="mesh/finger_index_prox-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_index_prox.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="index_finger_mid_mesh"
-            file="mesh/finger_index_mid-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_index_mid.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="index_finger_top_mesh"
-            file="mesh/finger_index_top-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_index_top.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <!-- Middle Finger Components -->
+        <mesh name="middle_finger_knuckle_mesh"
+            file="mesh/finger_middle_knuckle.stl"
+            scale="0.001 0.001 0.001"></mesh>
         <mesh name="middle_finger_prox_mesh"
-            file="mesh/finger_middle_prox-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_middle_prox.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="middle_finger_mid_mesh"
-            file="mesh/finger_middle_mid-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_middle_mid.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="middle_finger_top_mesh"
-            file="mesh/finger_middle_top-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_middle_top.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <!-- Pinky Finger Components -->
+        <mesh name="index_finger_knuckle_mesh"
+            file="mesh/finger_pinky_knuckle.stl"
+            scale="0.001 0.001 0.001"></mesh>
         <mesh name="pinky_finger_prox_mesh"
-            file="mesh/finger_pinky_prox-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_pinky_prox.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="pinky_finger_mid_mesh"
-            file="mesh/finger_pinky_mid-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_pinky_mid.stl"
             scale="0.001 0.001 0.001"></mesh>
         <mesh name="pinky_finger_top_mesh"
-            file="mesh/finger_pinky_top-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/finger_pinky_top.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <!-- Thumb Components -->
@@ -46,7 +55,7 @@
             file="mesh/thumb_palm_attachement.stl"
             scale="0.001 0.001 0.001"></mesh>
 
-        <mesh name="thumb_flexion_extension_mesh"
+        <!-- <mesh name="thumb_flexion_extension_mesh"
             file="mesh/thumb_flexion_extension.stl"
             scale="0.001 0.001 0.001"></mesh>
 
@@ -64,7 +73,7 @@
 
         <mesh name="thumb_top_mesh"
             file="mesh/thumb_finger_top.stl"
-            scale="0.001 0.001 0.001"></mesh>
+            scale="0.001 0.001 0.001"></mesh> -->
 
     </asset>index_top
 
@@ -187,7 +196,7 @@
             <body name="thumb_palm_attachement">
                 <geom type="mesh" mesh="thumb_palm_attachement_mesh" contype ="1" conaffinity = "0"></geom>
 
-                <body name="thumb_flexion_extension">
+                <!-- <body name="thumb_flexion_extension">
                     <joint name="thumb_flexion_extension_joint" type="hinge" axis="0.0 -0.84 0.54" pos="0.0262 -0.060889 -0.048065" range="-0.87 0.87"></joint> 
                     <geom type="mesh" mesh="thumb_flexion_extension_mesh" contype ="1" conaffinity = "0"></geom>
 
@@ -225,7 +234,7 @@
                             </body>
                         </body>
                     </body>
-                </body>
+                </body> -->
             </body>
 
         </body> 
