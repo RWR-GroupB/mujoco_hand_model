@@ -5,7 +5,7 @@
     <asset>
         <!-- Hand Palm -->
         <mesh name="hand_palm_mesh"
-            file="mesh/palm-prototype_hand-v1.2-2023-11-13.stl"
+            file="mesh/palm.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <!-- Index Finger Components -->
