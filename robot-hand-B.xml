@@ -1,6 +1,7 @@
 <mujoco model="robot_hand_B">
     <compiler angle="radian" />
-    <option collision="dynamic"/>
+    <!-- <option collision="all"/> -->
+    <option collision="all"/>
     <asset>
         <!-- Hand Palm -->
         <mesh name="hand_palm_mesh"
