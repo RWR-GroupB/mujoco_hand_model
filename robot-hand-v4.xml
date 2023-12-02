@@ -215,15 +215,15 @@
                                         <joint name="thumb_finger_mid_joint" axis="0.0 -0.84 0.54" pos="0.0807 -0.069134 -0.045189" range="0 0.83"></joint>
                                         <geom type="mesh" mesh="thumb_mid_mesh"></geom>
 
-                                        <body name="thumb_top_virt">
+                                        <!-- <body name="thumb_top_virt">
                                             <joint name="thumb_finger_top_joint_virt" axis="0.0 -0.84 0.54" pos="0.09770 -0.069671 -0.046033" range="0 0.83"></joint>
-                                            <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
+                                            <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" /> -->
 
                                             <!-- <body name="thumb_top">
                                                 <joint name="thumb_finger_top_joint" axis="0.0 -0.84 0.54" pos="0.10770 -0.069671 -0.046033" range="0 0.83"></joint>
                                                 <geom type="mesh" mesh="thumb_top_mesh"></geom>
                                             </body> -->
-                                        </body>
+                                        <!-- </body> -->
                                     </body>
                                 </body>
                             </body>
@@ -239,12 +239,12 @@
 
     <contact>
         <!-- neighboring bodies are excluded from contact calculation -->
-        <!-- <exclude body1="hand_palm" body2="thumb_palm_attachement"/> -->
-        <!-- <exclude body1="thumb_palm_attachement" body2="thumb_flexion_extension"/> -->
-        <!-- <exclude body1="thumb_flexion_extension" body2="thumb_knuckle_base"/> -->
-        <!-- <exclude body1="hand_palm" body2="thumb_prox"/>  there seems to be somehow unintended collision here -->
-        <!-- <exclude body1="thumb_prox" body2="thumb_mid"/>
-        <exclude body1="thumb_mid" body2="thumb_top"/>
+        <exclude body1="hand_palm" body2="thumb_palm_attachement"/>
+        <exclude body1="thumb_palm_attachement" body2="thumb_knuckle_base"/>
+        <exclude body1="thumb_knuckle_base" body2="thumb_prox"/>
+        <exclude body1="hand_palm" body2="thumb_prox"/>  <!-- there seems to be somehow unintended collision here -->
+        <exclude body1="thumb_prox" body2="thumb_mid"/>
+        <!-- <exclude body1="thumb_mid" body2="thumb_top"/> -->
 
         <exclude body1="hand_palm" body2="index_finger_prox"/>
         <exclude body1="index_finger_prox" body2="index_finger_mid"/>
@@ -256,7 +256,7 @@
 
         <exclude body1="hand_palm" body2="pinky_finger_prox"/>
         <exclude body1="pinky_finger_prox" body2="pinky_finger_mid"/>
-        <exclude body1="pinky_finger_mid" body2="pinky_finger_top"/> -->
+        <exclude body1="pinky_finger_mid" body2="pinky_finger_top"/>
     </contact>
 
 
