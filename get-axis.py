@@ -12,8 +12,8 @@ point2 = np.array(point2, dtype=np.float64)
 
 # the vector pointing from point2 to point1
 vector = point1 - point2
-print("vector: ", " ".join(map(str,vector/1000)))
+print("vector: ", vector/1000)
 
 # axis point
 axis_point = point2 + vector/2
-print("axis point: ", " ".join(map(str,axis_point/1000)))
+print("axis point: ", axis_point/1000)
