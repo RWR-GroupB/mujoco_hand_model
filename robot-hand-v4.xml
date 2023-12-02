@@ -196,7 +196,7 @@
                     <geom type="mesh" mesh="thumb_flexion_extension_mesh" contype ="1" conaffinity = "0"></geom> -->
 
                     <body name="thumb_knuckle_base">
-                        <joint name="thumb_adduction_abduction_joint" type="hinge" axis="0.0 0.9223 0.3865" pos="0.02620 -0.067708 -0.026184" range="-0.7 0.7"></joint>
+                        <joint name="thumb_adduction_abduction_joint" type="hinge" axis="0.0 0.023426 0.009817" pos="0.0142  -0.095797 -0.0135255" range="-0.7 0.7"></joint>
                         <geom type="mesh" mesh="thumb_knuckle_base_mesh"> </geom>
 
                         <body name="thumb_prox_virt">
