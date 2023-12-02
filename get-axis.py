@@ -7,8 +7,8 @@ point1 = [14.2,-84.084,-8.617]
 # the second point which acts as the base of the arrow
 point2 = [14.2,-107.51,-18.434]
 
-point1 = np.array(point1)
-point2 = np.array(point2)
+point1 = np.array(point1, dtype=np.float64)
+point2 = np.array(point2, dtype=np.float64)
 
 # the vector pointing from point2 to point1
 vector = point1 - point2
