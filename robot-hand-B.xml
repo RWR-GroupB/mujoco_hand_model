@@ -52,7 +52,7 @@
 
         <!-- Thumb Components -->
         <mesh name="thumb_palm_attachement_mesh"
-            file="mesh/thumb_palm_attachement.stl"
+            file="mesh/thumb_palm_attachment.stl"
             scale="0.001 0.001 0.001"></mesh>
 
         <mesh name="thumb_knuckle_base_mesh"
@@ -67,7 +67,11 @@
             file="mesh/thumb_finger_mid.stl"
             scale="0.001 0.001 0.001"></mesh>
 
-    </asset>index_top
+        <mesh name="thumb_top_mesh"
+            file="mesh/thumb_finger_top.stl"
+            scale="0.001 0.001 0.001"></mesh>
+
+    </asset>
 
     <default>
         <!-- use same geom params as the Shadow Hand model in IsaacGymEnv for now -->
