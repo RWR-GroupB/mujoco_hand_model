@@ -87,6 +87,38 @@
         <body name="hand_palm">
             <geom type="mesh" mesh="hand_palm_mesh" contype = "1" conaffinity = "0"></geom>
 
+            
+            <!-- Thumb -->
+            <body name="thumb_palm_attachement">
+                <geom type="mesh" mesh="thumb_palm_attachement_mesh"></geom>
+
+                <body name="thumb_adduction_abduction">
+                    <joint name="thumb_adduction_abduction_joint" type="hinge" axis="0.0 0.023426 0.009817" pos="0.0142  -0.095797 -0.0135255" range="-0.7 0.7"></joint>
+                    <geom type="mesh" mesh="thumb_adduction_abduction_mesh"> </geom>
+
+                    <body name="thumb_prox_virt">
+                        <joint name="thumb_finger_prox_joint_virt" axis="0.0 -0.38646821 0.92230273" pos="0.0412    -0.0957975 -0.013525" range="0 0.83"></joint>
+                        <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
+
+                        <body name="thumb_prox">
+                            <joint name="thumb_finger_prox_joint" axis="0.0 -0.38646821 0.92230273" pos="0.05720 -0.0957975 -0.013525" range="0 0.83"></joint>
+                            <geom type="mesh" mesh="thumb_prox_mesh"></geom>
+
+                            <body name="thumb_mid_virt">
+                                <joint name="thumb_finger_mid_joint_virt" axis="0.0 -0.38646821 0.92230273" pos="0.0832   -0.097642 -0.014298" range="0 0.96"></joint>
+                                <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
+                                
+                                <body name="thumb_mid">
+                                    <joint name="thumb_finger_mid_joint" axis="0.0 -0.38646821 0.92230273" pos="0.09520   -0.097642 -0.014298" range="0 0.96"></joint>
+                                    <geom type="mesh" mesh="thumb_mid_mesh"></geom>
+
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body> 
+            </body>
+
             <!-- Index Finger --> 
             <body name="index_finger_knuckle">
                 <geom type="mesh" mesh="index_finger_knuckle_mesh"></geom>
@@ -190,37 +222,6 @@
                         </body>
                     </body>
                 </body>
-            </body>
-
-            <!-- Thumb -->
-            <body name="thumb_palm_attachement">
-                <geom type="mesh" mesh="thumb_palm_attachement_mesh"></geom>
-
-                <body name="thumb_adduction_abduction">
-                    <joint name="thumb_adduction_abduction_joint" type="hinge" axis="0.0 0.023426 0.009817" pos="0.0142  -0.095797 -0.0135255" range="-0.7 0.7"></joint>
-                    <geom type="mesh" mesh="thumb_adduction_abduction_mesh"> </geom>
-
-                    <body name="thumb_prox_virt">
-                        <joint name="thumb_finger_prox_joint_virt" axis="0.0 -0.38646821 0.92230273" pos="0.0412    -0.0957975 -0.013525" range="0 0.83"></joint>
-                        <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
-
-                        <body name="thumb_prox">
-                            <joint name="thumb_finger_prox_joint" axis="0.0 -0.38646821 0.92230273" pos="0.05720 -0.0957975 -0.013525" range="0 0.83"></joint>
-                            <geom type="mesh" mesh="thumb_prox_mesh"></geom>
-
-                            <body name="thumb_mid_virt">
-                                <joint name="thumb_finger_mid_joint_virt" axis="0.0 -0.38646821 0.92230273" pos="0.0832   -0.097642 -0.014298" range="0 0.96"></joint>
-                                <inertial pos="0 0 0" mass="0.001" diaginertia="4E-10 4E-10 3E-10" />
-                                
-                                <body name="thumb_mid">
-                                    <joint name="thumb_finger_mid_joint" axis="0.0 -0.38646821 0.92230273" pos="0.09520   -0.097642 -0.014298" range="0 0.96"></joint>
-                                    <geom type="mesh" mesh="thumb_mid_mesh"></geom>
-
-                                </body>
-                            </body>
-                        </body>
-                    </body>
-                </body> 
             </body>
         </body> 
     
