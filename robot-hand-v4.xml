@@ -302,7 +302,7 @@
             <joint joint="index_finger_top_joint" coef="-1"/>
         </fixed>
         <fixed name="index_index_jointlink">
-            <joint joint="index_finger_mid_joint" coef="0.71"/> 
+            <joint joint="index_finger_mid_joint" coef="1"/> 
             <joint joint="index_finger_top_virt_joint" coef="-1"/>
         </fixed>
 
@@ -320,7 +320,7 @@
             <joint joint="middle_finger_top_joint" coef="-1"/>
         </fixed>
         <fixed name="middle_index_jointlink">
-            <joint joint="middle_finger_mid_joint" coef="0.71"/> 
+            <joint joint="middle_finger_mid_joint" coef="1"/> 
             <joint joint="middle_finger_top_virt_joint" coef="-1"/>
         </fixed>
 
@@ -334,7 +334,7 @@
             <joint joint="pinky_finger_mid_joint" coef="-1"/>
         </fixed>
         <fixed name="pinky_index_jointlink">
-            <joint joint="pinky_finger_mid_joint" coef="0.71"/> 
+            <joint joint="pinky_finger_mid_joint" coef="1"/> 
             <joint joint="pinky_finger_top_virt_joint" coef="-1"/>
         </fixed>
         <fixed name="pinky_index_mp2dp">
